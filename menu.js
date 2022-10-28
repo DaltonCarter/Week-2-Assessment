@@ -205,7 +205,8 @@ let foodArr = {
 
 //CODE HERE
 
-//Commentary: close but not quite apparently...We'll see my gut says this should work, but I must be missing something small.
+//Commentary: close but not quite apparently...We'll see my gut says this should work, but I must be missing something small. 
+//Probably went too extra...if I figure out how to fix it I'll leave the original commented out.
 
 const filterByProperty = (prop, num, type) => {
     
