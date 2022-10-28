@@ -205,6 +205,8 @@ let foodArr = {
 
 //CODE HERE
 
+//Commentary: close but not quite apparently...We'll see my gut says this should work, but I must be missing something small.
+
 const filterByProperty = (prop, num, type) => {
     
     for(i = 0; i < foodArr.length; i++){
