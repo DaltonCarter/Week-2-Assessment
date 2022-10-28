@@ -73,7 +73,7 @@ console.log(pizza.tags[1])
 
 //CODE HERE
 
-const {price} = pizza
+let {price} = pizza
 console.log(price)
 
 /*
@@ -101,49 +101,49 @@ console.log(catagory)
 
 //CODE HERE
 
-let foodArr = {
-   'pizza': [{
+let foodArr = [{
+   
     name: 'Pepperoni',
-    price: '$' + 12,
+    price:  12,
     catagory: 'entree',
-    popularity: 80 +'%',
-    rating: 4 + " stars",
+    popularity: 80,
+    rating: 4,
     tags: ['family', 'common']
    }, 
     {
     name: 'Cheese',
-    price: '$' + 9,
+    price:  9,
     catagory: 'entree',
-    popularity: 85 +'%',
-    rating: 4 + " stars",
+    popularity: 85,
+    rating: 4,
     tags: ['family', 'common']
    },
     {
     name: 'Carnivore',
-    price: '$' + 15,
+    price: 15,
     catagory: 'entree',
-    popularity: 75 +'%',
-    rating: 3 + " stars",
+    popularity: 75,
+    rating: 3,
     tags: ['Meats', 'Lots of toppings']
    },
     {
     name: 'Leaf Lovers',
-    price: '$' + 14,
+    price: 14,
     catagory: 'entree',
-    popularity: 80 +'%',
-    rating: 3 + " stars",
+    popularity: 80,
+    rating: 3,
     tags: ['Vegitarian']
    },
     {
     name: 'Everything but The...',
-    price: '$' + 20,
+    price: 20,
     catagory: 'entree',
-    popularity: 90 +'%',
-    rating: 5 + " stars",
+    popularity: 90,
+    rating: 5,
     tags: ['Ultimate', 'All of the Things']
    }    
 ]
-}
+
 
 
 //////////////////PROBLEM 4////////////////////
@@ -160,8 +160,8 @@ let foodArr = {
 
 //CODE HERE
 
- const filteredFood = foodArr.pizza.filter((pizza) => pizza.tags.includes('family'))
-//console.log(filteredFood)
+ const filteredFood = foodArr.filter((pizza) => pizza.tags.includes('family'))
+// console.log(filteredFood)
 
 
 //////////////////PROBLEM 5////////////////////
@@ -208,22 +208,37 @@ let foodArr = {
 //Commentary: close but not quite apparently...We'll see my gut says this should work, but I must be missing something small. 
 //Probably went too extra...if I figure out how to fix it I'll leave the original commented out.
 
-const filterByProperty = (prop, num, type) => {
+// const filterByProperty = (prop, num, type) => {
     
-    for(i = 0; i < foodArr.length; i++){
-        console.log(foodArr[i])
-        if(foodArr[i] === prop){
-            if(type === 'above'){
-            let filteredArr = foodArr.filter((prop) => prop > num)
-            return console.log(filteredArr)
+//     for(i = 0; i < foodArr.length; i++){
+//         console.log(foodArr[i])
+//         if(foodArr[i] === prop){
+//             if(type === 'above'){
+//             let filteredArr = foodArr.filter((prop) => prop > num)
+//             return console.log(filteredArr)
     
         
-    }
-    }
-    let filteredArr = foodArr.filter((prop) => prop < num)
-            return console.log(filteredArr)}
+//     }
+//     }
+//     let filteredArr = foodArr.filter((prop) => prop < num)
+//             return console.log(filteredArr)}
     
-  }
+//   }
+
+
+//ACTUAL SOLUTION:
+const filterByProperty = (prop, num, type) => {
+    const foodFilter = foodArr.filter((el) => {
+        if(type === 'above'){
+            return el[prop] > num
+
+        }else {
+            return el[prop] <= num
+        }
+    })
+    return foodFilter
+}
+
 
 
 /*
@@ -235,4 +250,4 @@ const filterByProperty = (prop, num, type) => {
 
 //CODE HERE
 
-filterByProperty('rating', 3, 'below')
+ console.log(filterByProperty('rating', 4, 'below'))

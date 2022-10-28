@@ -23,9 +23,10 @@
 
 //CODE HERE
 
-const greetUser = (userName) => console.log(`Welcome back ${userName}`)
-
-greetUser('Dalton')
+const greetUser = (userName) => {
+  return `Welcome back ${userName}`
+}
+console.log(greetUser('Dalton'))
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -54,13 +55,15 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 const canWeDeliver = (zipCode) => {
     for(i = 0; i < deliveryAreaZipCodes.length; i++){
         if(deliveryAreaZipCodes[i] === zipCode){
-            return console.log('You are in our delivery zone!')
+            return 'You are in our delivery zone!'
         }
         
     }
-    return console.log('Sorry, we caannot deliver to that address.')
+    return 'Sorry, we caannot deliver to that address.'
 }
-canWeDeliver(92378)
+console.log(canWeDeliver(92378))
+
+
 /* 
     Problem 2 Continued
 
@@ -82,12 +85,12 @@ canWeDeliver(92378)
 
 const canWeDeliverTwo = (zipCode) => {
     if(deliveryAreaZipCodes.includes(zipCode)){
-        return console.log('You are in our delivery zone!')
+        return 'You are in our delivery zone!'
     }
-    return console.log('Sorry, we caannot deliver to that address.')
+    return 'Sorry, we caannot deliver to that address.'
 }
 
-canWeDeliverTwo(85205)
+console.log(canWeDeliverTwo(85205))
 //////////////////PROBLEM 3////////////////////
 /* 
     Below is an array of objects that have some
@@ -130,19 +133,25 @@ const deals = [
 
 //CODE HERE
 
-const newDiscount = (arr, str, str2) => {
-    for(let i = 0; i < arr.length; i++) {
-        if(arr[i].title === str){
-            return arr[i].title = str2
+// const newDiscount = (arr, str, str2) => {
+//     for(let i = 0; i < arr.length; i++) {
+//         if(arr[i].title === str){
+//             return arr[i].title = str2
             
-        }
-    }
-}
+//         }
+//     }
+// }
 
 
-newDiscount(deals, '15% Off!', '10% Off!')
-console.log(deals)
+// newDiscount(deals, '15% Off!', '10% Off!')
+// console.log(deals)
 
+
+//ACTUAL BLOODY SOLUTION:
+
+console.log(deals[0].title)
+deals[0].title = deals[0].title.replace('15', '10')
+console.log(deals[0].title)
 /*
     The restaurant is going to continue its
     family deal for another month. 
@@ -157,14 +166,19 @@ console.log(deals)
 */
 
 //CODE HERE
-const newDesc = (arr, str, str2) => {
-    for(let i = 0; i < arr.length; i++) {
-        if(arr[i].desc === str){
-            return arr[i].desc = str2.trim()
+// const newDesc = (arr, str, str2) => {
+//     for(let i = 0; i < arr.length; i++) {
+//         if(arr[i].desc === str){
+//             return arr[i].desc = str2.trim()
             
-        }
-    }
-}
+//         }
+//     }
+// }
 
-newDesc(deals, '   This deal lasts until the end of March! ', '   This deal lasts until the end of April! ' )
-console.log(deals)
+// newDesc(deals, '   This deal lasts until the end of March! ', '   This deal lasts until the end of April! ' )
+// console.log(deals)
+
+//COMMENTARY: Thanks to the Syntax breakdown for above I fixed this one out before Kyle reviewed it.
+
+deals[1].desc = deals[1].desc.replace('March', 'April').trim()
+console.log(deals[1].desc)

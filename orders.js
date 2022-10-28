@@ -58,8 +58,8 @@ class Ticket {
 
 //CODE HERE
 
-let order1 = new Ticket('bread, pizza, and soda', '7:03 PM', '575')
-console.log(order1)
+let firstTicket = new Ticket('bread, pizza, and soda', '7:03 PM', '575')
+console.log(firstTicket)
 /*
     Call the `updateStatus` method on
     `firstTicket` passing in the string
@@ -68,4 +68,4 @@ console.log(order1)
 
 //CODE HERE
 
-order1.updateStatus('cooking')
+firstTicket.updateStatus('cooking')

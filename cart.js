@@ -19,9 +19,7 @@
 */
 
 
-//Commentary: I am freaking baffled this should be working and instead it's returning [object],[object], and then two of the prices.
-//we did this exact thing in a lab, with the solution set up LIKE THAT and it works fine, trouble shoot says it's not even IDENTIFYING the first
-//price I don't know what to do here, this should be working.
+
 const cart = [
     {
         name: 'pizza', 
@@ -39,10 +37,9 @@ const cart = [
 
 //CODE HERE
 
- const summedPrice = cart.reduce((acc, cur) => {
-    console.log(cur.price)
-    return acc + cur.price 
- })
+ const summedPrice = cart.reduce((acc, curr) => {
+    return acc + curr.price 
+ }, 0)
  console.log(summedPrice)
 
 
@@ -64,10 +61,11 @@ const cart = [
 //CODE HERE
 
 const calcFinalPrice = (cartTotal, couponValue, tax) => {
-    let finalNumber = cartTotal + (cartTotal * tax) - couponValue
+    let finalNumber = cartTotal * (1 + tax)  - couponValue
     return console.log(finalNumber)
 }
 
+console.log(calcFinalPrice(summedPrice, 5, .06))
 //////////////////PROBLEM 3////////////////////
 /*  
     In this problem, you'll create a model for 
@@ -93,8 +91,14 @@ const calcFinalPrice = (cartTotal, couponValue, tax) => {
 Things a restraunt needs for customer information:
 name - you have to know who the order if for.
 Price of items in cart - you need to know what to charge.
-subTotal - the sub total of whatever you ordered
+number of items in car- for reference to make sure the order is complete
 Tip - most sit down places will have the tip option either on the card reader or  your recipt
+
+Name is a 'string'
+number of items = a number for total cart size
+Price of items in cart = array of numbers
+tip = a nother number representing the ammount tipped
+
 */
 
 /*

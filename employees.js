@@ -106,7 +106,7 @@ class Manager extends Employee{
     }
 
     addEmployee(emp){
-        this.employees += ', ' + emp
+        this.employees.push(emp)
     }
 }
 
@@ -124,7 +124,7 @@ class Manager extends Employee{
 
 //CODE HERE
 
-let manager = new Manager('Winston', 'Weekday Mornings, Weekday Afternoons', 'Cece, Schmidt')
+let manager = new Manager('Winston', 'Weekday Mornings, Weekday Afternoons', ['Cece', 'Schmidt'])
 console.log(manager)
 
 /*
